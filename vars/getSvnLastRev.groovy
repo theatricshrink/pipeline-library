@@ -1,3 +1,4 @@
+@NonCPS
 def call(String svnUrl) {
 	def svnInfo = "";
 	if(isUnix) {
