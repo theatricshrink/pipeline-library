@@ -1,6 +1,9 @@
 def call(path) {
 	if(fileExists(path)) {
-		File file = new File("${pwd()}/${path}");
+		File file = new File(path);
+		if(!file.isAbsolute()) {
+			file = new File("${pwd()}/${path}");
+		}
 		def dir = file.isDirectory() ? true : false
 		if(isUnix()) {
 			if(dir) {
