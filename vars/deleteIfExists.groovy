@@ -1,5 +1,7 @@
-def call(path,dir) {
+def call(path) {
 	if(fileExists(path)) {
+		File file = new File(path);
+		def dir = file.isDirectory() ? true : false
 		if(isUnix()) {
 			if(dir) {
 				sh "rm -R ${path}"
