@@ -1,5 +1,5 @@
 @NonCPS
-def writePropertyFile(filepath, entries) {
+def call(filepath, entries) {
 	def ant = new AntBuilder()
 	ant.propertyfile(file: filepath) {
 	    entries.each { k, v ->
